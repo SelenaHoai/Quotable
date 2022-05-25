@@ -11,7 +11,7 @@
   display:flex;
   justify-content:space-between;
   align-items: center;
-  background-color: rgb(32, 51, 70);
+  background-color: rgb(59, 62, 102);
   color: white;
   padding: 10px 30px;
   font-size: 20px;
@@ -20,6 +20,21 @@
 .nav-dropmenu {
   display: flex;
   justify-content:space-evenly;
+}
 
+/******************* ALL QUOTES page ************************/
 
+.all-quotes {
+background-color: rgb(172, 141, 175);
+}
+
+.aquote-style {
+  border: 1px solid rgb(72, 76, 127);
+  border-radius: 15px;
+  box-shadow: 2px 4px 8px;
+  width: 350px;
+  height: 200px;
+  padding: 10px;
+  margin: 20px;
+  background-color: rgb(226, 207, 215);
 }

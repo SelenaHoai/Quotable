@@ -42,8 +42,8 @@ function Navbar() {
         </div>
       </div>
       <div>
-        <button onclick="#" style={{marginRight:10}}>Register</button>
-        <button onclick="#">Login</button>
+        <button onClick="#" style={{marginRight:10}}>Register</button>
+        <button onClick="#">Login</button>
       </div>
     </div>
   );

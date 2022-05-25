@@ -11,7 +11,7 @@ module.exports = {
         .then( (quotes) => {
             return res.json(quotes)
         })
-        .catch(err => res.json({message: 'Something went wrong', error:err}));  
+        .catch(err => res.status(400).json({message: 'Something went wrong', error:err}));  
     },
 
     // CREATE
@@ -28,7 +28,7 @@ module.exports = {
     findOne: (req, res) => {
         Quotable.findById(req.params.id)
         .then(oneSingleQuote => res.json(oneSingleQuote))
-        .catch(err => res.json({ message: 'Error finding a quote', error: err }));
+        .catch(err => res.status(400).json({ message: 'Error finding a quote', error: err }));
     },
 
     // UPDATE
@@ -44,7 +44,7 @@ module.exports = {
     delete: (req, res) => {
         Quotable.findByIdAndDelete(req.params.id)
         .then(result => res.json(result))
-        .catch(err => res.json({ message: 'Error unable to delete a quote', error: err }));
+        .catch(err => res.status(400).json({ message: 'Error unable to delete a quote', error: err }));
     }
 
 }

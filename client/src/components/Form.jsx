@@ -66,7 +66,7 @@ const Form = (props) => {
         <div style={{margin:10}}>
             <div>
                 <h2>Add Quotes</h2>
-                <button style={{backgroundColor:"blue"}}><Link to={"/quotes"} style={{textDecoration:"none", color:"white"}}>Home</Link></button>
+                <button style={{backgroundColor:"blue"}}><Link to={"/"} style={{textDecoration:"none", color:"white"}}>Home</Link></button>
             </div>
             <div>
                 <form onSubmit={createQuote}>

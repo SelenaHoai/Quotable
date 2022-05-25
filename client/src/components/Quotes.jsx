@@ -10,30 +10,23 @@ const Quotes = (props) => {
     // const navigate = useNavigate();
     
     useEffect(() => {
-        axios.get(`http://localhost:8000/api/quotes/`)
+        axios.get(`http://localhost:8000/api/quotes`)
             .then(res => {setQuotes(res.data)
             console.log(res)})
             .catch(err => console.error(err));
     }, []);
-    
+    console.log(props)
     
     return (
-        <div>
+        <div className="all-quotes">
             <div> 
-
-                <h1>THIS IS ALL QUOTES PAGE</h1>
-                <p>{quotes.quote}</p>
-                <p>{quotes.name}</p>
-                <p>{quotes.isFavorite}</p>
-
+                <h1 style={{color:"white", textAlign:"center"}}>THIS IS ALL QUOTES PAGE</h1>
             </div>
-            <div>{props.allQuotes.map((quote) => {
+            <div>{props.allQuotes.map((quoteshow) => {
                 return (
-                    <div key={quote._id}>
-                        <div>
-                            <h3>{quotes.quote}</h3>
-
-                        </div>
+                    <div key={quoteshow._id} className="aquote-style">
+                        <p>"{quoteshow.quote}"</p>
+                        <p style={{textAlign:"end"}}>{quoteshow.name}</p>
                     </div>
                     )
                 })

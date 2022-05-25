@@ -7,7 +7,7 @@ const QuotableSchema = new mongoose.Schema(
     name: {
         type: String,
         required: [true, "author name is required"],
-        minlength: [3, "Author name must be at least 3 characters long"]
+        // minlength: [3, "Author name must be at least 3 characters long"]
     },
     topic: {
         type: String,
