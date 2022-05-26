@@ -1,7 +1,12 @@
+import React, {useState} from 'react';
 
 
 
-function Navbar() {
+const Navbar = () => {
+    const [name, setAuthorName] = useState("");
+    const [topic, setTopicName] = useState("");
+
+
   return (
     <div className="nav-bar">
       <div>
@@ -11,7 +16,7 @@ function Navbar() {
         <a href="/quotes">Quotes</a>
         <div style={{marginLeft:30, marginRight:30}}>
           <label for="authors">Authors: </label>
-          <select name="author" id="author">
+          <select onChange={(e) => setAuthorName(e.target.value)} value={name}>
             <option value="tonyrobbins">Tony Robbins</option>
             <option value="roybennett">Roy Bennett</option>
             <option value="isaacnewton">Isaac Newton</option>
@@ -30,7 +35,7 @@ function Navbar() {
         </div>
         <div>
           <label for="topics">Topics: </label>
-          <select name="topic" id="topic">
+          <select onChange={(e) => setTopicName(e.target.value)} value={topic}>
             <option value="inspiration">Inspiration</option>
             <option value="motivation">Motivation</option>
             <option value="travel">Travel</option>

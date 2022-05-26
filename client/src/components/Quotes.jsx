@@ -18,13 +18,14 @@ const Quotes = (props) => {
     console.log(props)
     
     return (
-        <div className="all-quotes">
-            <div> 
-                <h1 style={{color:"white", textAlign:"center"}}>THIS IS ALL QUOTES PAGE</h1>
+        <div>
+            <div style={{backgroundColor:"rgb(172, 141, 175)"}}> 
+                <h1 style={{textAlign:"center", color:"white"}}>ALL QUOTES</h1>
             </div>
-            <div>{props.allQuotes.map((quoteshow) => {
+            <div className="all-quotes">
+                {props.allQuotes.map((quoteshow) => {
                 return (
-                    <div key={quoteshow._id} className="aquote-style">
+                    <div key={quoteshow._id} className="quote-box">
                         <p>"{quoteshow.quote}"</p>
                         <p style={{textAlign:"end"}}>{quoteshow.name}</p>
                     </div>

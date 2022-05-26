@@ -63,12 +63,12 @@ const Form = (props) => {
     // }
         
     return (
-        <div style={{margin:10}}>
-            <div>
-                <h2>Add Quotes</h2>
-                <button style={{backgroundColor:"blue"}}><Link to={"/"} style={{textDecoration:"none", color:"white"}}>Home</Link></button>
-            </div>
-            <div>
+        <div className="add-quote-page">
+            <div className="add-form">
+                <div style={{display:"flex", justifyContent:"space-between", margin:10}}>
+                    <h2>Add Quote</h2>
+                    <button><Link to={"/"} style={{textDecoration:"none", color:"black", paddingLeft:10, paddingRight:10}}>Home</Link></button>
+                </div>
                 <form onSubmit={createQuote}>
                     <div>
                         <label>Author Name: </label>
@@ -89,7 +89,7 @@ const Form = (props) => {
                             <option value="anitadesai">Anita Desai</option>
                         </select>
                     </div>
-                    <div>
+                    <div style={{marginTop:10, marginBottom:10}}>
                         <label>Topic: </label>
                         <select onChange={(e) =>setTopic(e.target.value)} value={topic}>
                             <option value="inspiration">Inspiration</option>
@@ -106,11 +106,13 @@ const Form = (props) => {
                         <input onChange={(e) =>setQuote(e.target.value)} value={quote}/><br />
                     </div>
                     <div>
-                        <div>
+                        <div style={{marginTop:10}}>
                             <input onClick={handleCheckBox1} onChange={(e) => setIsFavorite(e.target.value)} value={isFavorite} checked={isFavorite ? 'checked' : ''} type="checkbox" /> Favorite
                         </div>
                         {errors.map((err, index) => <p key={index} style={{color:"red"}}>{err}</p>)}
-                        <button>Add Quote</button> 
+                        <div style={{display:"flex", justifyContent:"center"}}>
+                            <button style={{margin:10}}>Add Quote</button> 
+                        </div>
                     </div>
                 </form>
             </div>

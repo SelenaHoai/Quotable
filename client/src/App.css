@@ -5,8 +5,10 @@
  * {
   padding: 0;
   margin: 0;
- }
+}
 
+
+/********************* NAV BAR ********************/
 .nav-bar {
   display:flex;
   justify-content:space-between;
@@ -22,19 +24,47 @@
   justify-content:space-evenly;
 }
 
+
+
 /******************* ALL QUOTES page ************************/
 
 .all-quotes {
 background-color: rgb(172, 141, 175);
+float: left;
+/* max-width: 55%; */
+display: flex;
+flex-wrap:  wrap;
 }
 
-.aquote-style {
+.quote-box {
   border: 1px solid rgb(72, 76, 127);
   border-radius: 15px;
   box-shadow: 2px 4px 8px;
   width: 350px;
   height: 200px;
-  padding: 10px;
-  margin: 20px;
+  padding: 20px;
+  margin: 40px 20px;
   background-color: rgb(226, 207, 215);
+  display: flex;
+  flex-direction: column;
+  flex-basis: 30%;
+}
+
+/**************** ADD FORM ***************/
+
+.add-quote-page {
+  background-color: rgb(172, 141, 175);
+  height: 100vh;
+  padding-top: 20px;
+}
+
+.add-form {
+  border: 1px solid rgb(72, 76, 127);
+  border-radius: 15px;
+  box-shadow: 2px 4px 8px;
+  width: 400px;
+  padding: 20px;
+  margin: 30px 50px;
+  background-color: rgb(226, 207, 215);
+
 }
