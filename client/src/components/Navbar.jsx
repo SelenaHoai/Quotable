@@ -1,16 +1,31 @@
 import React, {useState} from 'react';
+import axios from 'axios';
 
 
 
 const Navbar = () => {
     const [name, setAuthorName] = useState("");
     const [topic, setTopicName] = useState("");
+    // const [flip, setFlip] = useState("");
 
+
+    const getCategory = (thetopic) => {
+        console.log(thetopic);
+        axios.get(`http://localhost:8000/api/quotes/${thetopic}`, {
+        })
+            .then(res => {
+                // setFlip(!flip)
+                // navigate('/topics/status',{replace:true})
+                setTopicName (res.data)
+                console.log(res)
+            })
+                .catch(err=>{console.log(err)})
+    }
 
   return (
     <div className="nav-bar">
       <div>
-        <h3>QUOTABLE</h3>
+        <h3><a href="/">QUOTABLE</a></h3>
       </div>
       <div className="nav-dropmenu">
         <a href="/quotes">Quotes</a>
@@ -35,7 +50,7 @@ const Navbar = () => {
         </div>
         <div>
           <label for="topics">Topics: </label>
-          <select onChange={(e) => setTopicName(e.target.value)} value={topic}>
+          <select onChange={(e) => getCategory(e.target.value)} value={topic}>
             <option value="inspiration">Inspiration</option>
             <option value="motivation">Motivation</option>
             <option value="travel">Travel</option>

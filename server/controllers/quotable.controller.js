@@ -31,6 +31,33 @@ module.exports = {
         .catch(err => res.status(400).json({ message: 'Error finding a quote', error: err }));
     },
 
+    // // READ TOPIC
+    // findOneTopic: (req, res) => {
+    //     Quotable.findOne({topic:req.params.topic})
+    //     .then(oneTopicQuote => res.json({topic:oneTopicQuote}))
+    //     .catch(err => res.status(400).json({ message: 'Error finding a quote', error: err }));
+    // },
+
+    // READ RANDOM
+    findRandomQuote: (req, res) => {
+        Quotable.find(req.params.id)
+        .then(ranQuote => {
+            let randomQuote=Math.floor(Math.random() * ranQuote.length);
+            res.json(ranQuote[randomQuote]);
+        })
+        .catch(err => res.status(400).json({message: 'Something went wrong', error: err}));
+    },  
+
+    // // READ ALL RANDOM
+    // findAllRandomQuote: (req, res) => {
+    //     Quotable.aggregate()
+    //     .then(ranQuote => {
+    //         // let randomQuote=Math.floor(Math.random() * ranQuote.length);
+    //         res.json({ $sample: { size: ranQuote} });
+    //     })
+    //     .catch(err => res.status(400).json({message: 'Something went wrong', error: err}));
+    // },  
+
     // UPDATE
     update: (req, res) => {
         Quotable.findByIdAndUpdate(req.params.id, req.body, {

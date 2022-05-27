@@ -6,6 +6,7 @@ import axios from 'axios';
     
 const Quotes = (props) => {
     const [quotes, setQuotes] = useState({})
+    const { removeFromDom } = props;
     // const { id } = useParams();
     // const navigate = useNavigate();
     
@@ -16,6 +17,15 @@ const Quotes = (props) => {
             .catch(err => console.error(err));
     }, []);
     console.log(props)
+
+    // DELETE
+    const deleteQuote = (QuoteId) => {
+        axios.delete(`http://localhost:8000/api/quotes/delete/${QuoteId}`) // make a request to the DB to delete
+        .then(res => {
+            removeFromDom(QuoteId);
+        })
+        .catch(err => console.error(err));
+    }
     
     return (
         <div>
@@ -28,6 +38,7 @@ const Quotes = (props) => {
                     <div key={quoteshow._id} className="quote-box">
                         <p>"{quoteshow.quote}"</p>
                         <p style={{textAlign:"end"}}>{quoteshow.name}</p>
+                        <img src={"./images/trash1.png"} onClick={(e) => {deleteQuote(quoteshow._id)}} style={{width:35, height:30, cursor:"pointer"}} />
                     </div>
                     )
                 })

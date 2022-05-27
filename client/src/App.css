@@ -24,6 +24,15 @@
   justify-content:space-evenly;
 }
 
+/********************* MAIN PAGE ********************/
+
+.main-page {
+  background-color:rgb(172, 141, 175);
+  text-align: center;
+  height:100vh;
+  padding-top: 150px;
+  font-style: italic;
+}
 
 
 /******************* ALL QUOTES page ************************/

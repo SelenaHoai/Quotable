@@ -37,9 +37,10 @@ const App = () => {
   //     })
   // }, [update])
 
-  // const removeFromDom = quoteId => {
-  //     setAllQuotes(allQuotes.filter((quote) => quote._id !== quoteId));
-  // }
+  const removeFromDom = QuoteId => {
+      setAllQuotes(allQuotes.filter((quoteshow) => quoteshow._id !== QuoteId));
+  }
+
 
 
   return (
@@ -49,7 +50,7 @@ const App = () => {
       <div>
             <Routes>
                 <Route path='/' element={<Main/>} />
-                <Route path='/quotes' element={<Quotes setAllQuotes={setAllQuotes} allQuotes={allQuotes}/>} />
+                <Route path='/quotes' element={<Quotes allQuotes={allQuotes} removeFromDom={removeFromDom} />} />
                 <Route path='/quotes/new' element={<Form setAllQuotes={setAllQuotes} allQuotes={allQuotes}/>} />
                 {/* <Route path='/quotes/:id' element={<View/>}/> */}
                 {/* <Route path='/quotes/:id' element={<View setUpdate = {setUpdate} update = {update}/>} /> */}
