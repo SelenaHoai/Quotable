@@ -11,6 +11,7 @@ const Quotes = (props) => {
     // const navigate = useNavigate();
     
     useEffect(() => {
+// do an if statement with two else after it for alltopics & allauthors
         axios.get(`http://localhost:8000/api/quotes`)
             .then(res => {setQuotes(res.data)
             console.log(res)})
@@ -38,7 +39,7 @@ const Quotes = (props) => {
                     <div key={quoteshow._id} className="quote-box">
                         <p>"{quoteshow.quote}"</p>
                         <p style={{textAlign:"end"}}>{quoteshow.name}</p>
-                        <img src={"./images/trash1.png"} onClick={(e) => {deleteQuote(quoteshow._id)}} style={{width:35, height:30, cursor:"pointer"}} />
+                        {/* <img src={"./images/trash1.png"} onClick={(e) => {deleteQuote(quoteshow._id)}} style={{width:35, height:30, cursor:"pointer"}} /> */}
                     </div>
                     )
                 })

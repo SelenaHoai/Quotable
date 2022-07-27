@@ -32,7 +32,7 @@ module.exports = {
     },
 
     // // READ TOPIC
-    // findOneTopic: (req, res) => {
+    // findAllByTopic: (req, res) => {
     //     Quotable.findOne({topic:req.params.topic})
     //     .then(oneTopicQuote => res.json({topic:oneTopicQuote}))
     //     .catch(err => res.status(400).json({ message: 'Error finding a quote', error: err }));

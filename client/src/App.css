@@ -13,7 +13,7 @@
   display:flex;
   justify-content:space-between;
   align-items: center;
-  background-color: rgb(59, 62, 102);
+  background-color: rgb(7,44,86);
   color: white;
   padding: 10px 30px;
   font-size: 20px;
@@ -27,7 +27,9 @@
 /********************* MAIN PAGE ********************/
 
 .main-page {
-  background-color:rgb(172, 141, 175);
+  background-image: url("https://wallpapershome.com/images/wallpapers/reflection-3840x2160-boat-sunset-19538.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
   text-align: center;
   height:100vh;
   padding-top: 150px;
@@ -38,7 +40,7 @@
 /******************* ALL QUOTES page ************************/
 
 .all-quotes {
-background-color: rgb(172, 141, 175);
+background-color: rgb(171,214,154);
 float: left;
 /* max-width: 55%; */
 display: flex;
@@ -53,7 +55,7 @@ flex-wrap:  wrap;
   height: 200px;
   padding: 20px;
   margin: 40px 20px;
-  background-color: rgb(226, 207, 215);
+  background-color: rgb(195,148,146);
   display: flex;
   flex-direction: column;
   flex-basis: 30%;

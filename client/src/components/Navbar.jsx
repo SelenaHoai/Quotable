@@ -10,17 +10,13 @@ const Navbar = () => {
 
 
     const getCategory = (thetopic) => {
+      setTopicName(thetopic);
         console.log(thetopic);
-        axios.get(`http://localhost:8000/api/quotes/${thetopic}`, {
-        })
-            .then(res => {
-                // setFlip(!flip)
-                // navigate('/topics/status',{replace:true})
-                setTopicName (res.data)
-                console.log(res)
-            })
-                .catch(err=>{console.log(err)})
     }
+    const getAuthorName = (theauthor) => {
+      setAuthorName(theauthor);
+      console.log(theauthor);
+  }
 
   return (
     <div className="nav-bar">
@@ -31,7 +27,8 @@ const Navbar = () => {
         <a href="/quotes">Quotes</a>
         <div style={{marginLeft:30, marginRight:30}}>
           <label for="authors">Authors: </label>
-          <select onChange={(e) => setAuthorName(e.target.value)} value={name}>
+          <select onChange={(e) => getAuthorName(e.target.value)} value={name}>
+            <option value="allauthors">All Authors</option>
             <option value="tonyrobbins">Tony Robbins</option>
             <option value="roybennett">Roy Bennett</option>
             <option value="isaacnewton">Isaac Newton</option>
@@ -51,6 +48,7 @@ const Navbar = () => {
         <div>
           <label for="topics">Topics: </label>
           <select onChange={(e) => getCategory(e.target.value)} value={topic}>
+            <option value="alltopics">All Topics</option>
             <option value="inspiration">Inspiration</option>
             <option value="motivation">Motivation</option>
             <option value="travel">Travel</option>
