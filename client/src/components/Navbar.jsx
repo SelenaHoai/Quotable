@@ -21,12 +21,12 @@ const Navbar = () => {
   return (
     <div className="nav-bar">
       <div>
-        <h3><a href="/">QUOTABLE</a></h3>
+        <a href="/"><img src="./images/Quotablelogo1.png" width="250" height="130"></img></a>
       </div>
       <div className="nav-dropmenu">
-        <a href="/quotes">Quotes</a>
+        <h2><a href="/quotes" className="allQuotes">Quotes</a></h2>
         <div style={{marginLeft:30, marginRight:30}}>
-          <label for="authors">Authors: </label>
+          <h2><label for="authors">Authors: </label></h2>
           <select onChange={(e) => getAuthorName(e.target.value)} value={name}>
             <option value="allauthors">All Authors</option>
             <option value="tonyrobbins">Tony Robbins</option>
@@ -46,7 +46,7 @@ const Navbar = () => {
           </select>
         </div>
         <div>
-          <label for="topics">Topics: </label>
+          <h2><label for="topics">Topics: </label></h2>
           <select onChange={(e) => getCategory(e.target.value)} value={topic}>
             <option value="alltopics">All Topics</option>
             <option value="inspiration">Inspiration</option>
