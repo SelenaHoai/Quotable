@@ -24,8 +24,8 @@ const Navbar = () => {
         <a href="/"><img src="./images/Quotablelogo1.png" width="250" height="130"></img></a>
       </div>
       <div className="nav-dropmenu">
-        <h2><a href="/quotes" className="allQuotes">Quotes</a></h2>
-        <div style={{marginLeft:30, marginRight:30}}>
+        <a href="/quotes" className="allQuotes">Quotes</a>
+        {/* <div style={{marginLeft:30, marginRight:30}}>
           <h2><label for="authors">Authors: </label></h2>
           <select onChange={(e) => getAuthorName(e.target.value)} value={name}>
             <option value="allauthors">All Authors</option>
@@ -43,10 +43,19 @@ const Navbar = () => {
             <option value="andregide">Andre Gide</option>
             <option value="ibnbattuta">Ibn Battuta</option>
             <option value="anitadesai">Anita Desai</option>
-          </select>
+          </select> */}
+        <div class="dropdown">
+          <button class="dropbtn" onclick="myFuction()">Authors
+            <i class="fa fa-caret-down"></i>
+          </button>
+          <div class="dropdown-content" id="myDropdown">
+            <a href="#">Tony Robbins</a>
+            <a href="#">Roy Bennett</a>
+            <a href="#">Isaac Newton</a>
+          </div>
         </div>
         <div>
-          <h2><label for="topics">Topics: </label></h2>
+          {/* <h2><label for="topics">Topics: </label></h2>
           <select onChange={(e) => getCategory(e.target.value)} value={topic}>
             <option value="alltopics">All Topics</option>
             <option value="inspiration">Inspiration</option>
@@ -56,13 +65,23 @@ const Navbar = () => {
             <option value="reminder">Reminder</option>
             <option value="change">Change</option>
             <option value="love">Love</option>
-          </select>
+          </select> */}
+          <div class="dropdown">
+            <button class="dropbtn" onclick="myFuction()">Topics
+              <i class="fa fa-caret-down"></i>
+            </button>
+            <div class="dropdown-content" id="myDropdown">
+              <a href="#">inspiration</a>
+              <a href="#">motivation</a>
+              <a href="#">travel</a>
+          </div>
         </div>
       </div>
       <div>
         <button onClick="#" style={{marginRight:10}}>Register</button>
         <button onClick="#">Login</button>
       </div>
+    </div>
     </div>
   );
 }
