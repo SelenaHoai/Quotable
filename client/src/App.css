@@ -19,11 +19,6 @@
   font-size: 30px;
 }
 
-.nav-dropmenu {
-  display: flex;
-  justify-content:space-around;
-}
-
 .allQuotes {
   color: white;
   text-decoration: none;

@@ -23,7 +23,7 @@ const Navbar = () => {
       <div>
         <a href="/"><img src="./images/Quotablelogo1.png" width="250" height="130"></img></a>
       </div>
-      <div className="nav-dropmenu">
+      <div className="nav-bar">
         <a href="/quotes" className="allQuotes">Quotes</a>
         {/* <div style={{marginLeft:30, marginRight:30}}>
           <h2><label for="authors">Authors: </label></h2>
@@ -45,9 +45,7 @@ const Navbar = () => {
             <option value="anitadesai">Anita Desai</option>
           </select> */}
         <div class="dropdown">
-          <button class="dropbtn" onclick="myFuction()">Authors
-            <i class="fa fa-caret-down"></i>
-          </button>
+          <button class="dropbtn" onclick="myFuction()">Authors <i class="fa fa-caret-down"></i></button>
           <div class="dropdown-content" id="myDropdown">
             <a href="#">Tony Robbins</a>
             <a href="#">Roy Bennett</a>
@@ -67,9 +65,7 @@ const Navbar = () => {
             <option value="love">Love</option>
           </select> */}
           <div class="dropdown">
-            <button class="dropbtn" onclick="myFuction()">Topics
-              <i class="fa fa-caret-down"></i>
-            </button>
+            <button class="dropbtn" onclick="myFuction()">Topics <i class="fa fa-caret-down"></i></button>
             <div class="dropdown-content" id="myDropdown">
               <a href="#">inspiration</a>
               <a href="#">motivation</a>
@@ -77,7 +73,7 @@ const Navbar = () => {
           </div>
         </div>
       </div>
-      <div>
+      <div class="nav-bar">
         <button onClick="#" style={{marginRight:10}}>Register</button>
         <button onClick="#">Login</button>
       </div>
