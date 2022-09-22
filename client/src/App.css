@@ -15,9 +15,23 @@
   align-items: center;
   background-color: rgb(115,115,115);
   color: white;
-  padding: 10px 30px;
+  padding: 5px 30px;
   font-size: 30px;
+  text-decoration: none;
 }
+
+a:link {
+  color: red;
+}
+
+a:hover {
+  color: white;
+}
+
+a:active {
+  color: green;
+}
+
 
 .allQuotes {
   color: white;
@@ -58,7 +72,7 @@
 }
 
 .allQuotes:hover, .navbar a:hover, .dropdown:hover .dropbtn, .dropbtn:focus {
-  background-color: rgb(47, 0, 255);
+  background-color: rgba(231, 229, 243, 0.76);
 }
 
 .dropdown-content {

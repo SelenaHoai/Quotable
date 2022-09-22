@@ -21,7 +21,7 @@ const Navbar = () => {
   return (
     <div className="nav-bar">
       <div>
-        <a href="/"><img src="./images/Quotablelogo1.png" width="250" height="130"></img></a>
+        <a href="/"><img src="./images/Quotablelogo1.png" width="170" height="80"></img></a>
       </div>
       <div className="nav-bar">
         <a href="/quotes" className="allQuotes">Quotes</a>
@@ -73,10 +73,10 @@ const Navbar = () => {
           </div>
         </div>
       </div>
-      <div class="nav-bar">
-        <button onClick="#" style={{marginRight:10}}>Register</button>
-        <button onClick="#">Login</button>
-      </div>
+      {/* <div class="nav-bar">
+        <button onClick="#" style={{marginRight:10, color:"blue", backgroundColor:"white"}}>Register</button>
+        <button onClick="#" style={{marginRight:10, color:"green"}}>Login</button>
+      </div> */}
     </div>
     </div>
   );
