@@ -33,6 +33,9 @@ const Quotes = (props) => {
             {/* <div style={{backgroundColor:"rgb(172, 141, 175)"}}> 
                 <h1 style={{textAlign:"center", color:"white"}}>ALL QUOTES</h1>
             </div> */}
+            <div style={{paddingTop:10, paddingLeft:10, paddingRight:10}}>
+                <img src="./images/leaves.jpg" width="100%"></img>
+            </div>
             <div className="all-quotes">
                 {props.allQuotes.map((quoteshow) => {
                 return (

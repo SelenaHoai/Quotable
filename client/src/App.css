@@ -120,9 +120,9 @@ a:active {
 
 .all-quotes {
 /* background-color: rgb(152,163,165); */
-background-image: url("https://images.pexels.com/photos/5684798/pexels-photo-5684798.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1");
-background-repeat: no-repeat;
-background-size: cover;
+background-image: url("/public/images/wood-panel.jpg");
+background-repeat: repeat-y;
+background-size:contain;
 margin: 10px;
 float: left;
 /* max-width: 55%; */
@@ -136,7 +136,7 @@ flex-wrap:  wrap;
   box-shadow: 2px 4px 8px;
   width: 350px;
   height: 200px;
-  padding: 20px;
+  padding: 50px 20px 20px 20px;
   margin: 40px 20px;
   background-color: rgb(223, 221, 217);
   display: flex;
