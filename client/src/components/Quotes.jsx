@@ -30,9 +30,9 @@ const Quotes = (props) => {
     
     return (
         <div>
-            <div style={{backgroundColor:"rgb(172, 141, 175)"}}> 
+            {/* <div style={{backgroundColor:"rgb(172, 141, 175)"}}> 
                 <h1 style={{textAlign:"center", color:"white"}}>ALL QUOTES</h1>
-            </div>
+            </div> */}
             <div className="all-quotes">
                 {props.allQuotes.map((quoteshow) => {
                 return (
