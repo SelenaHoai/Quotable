@@ -21,7 +21,7 @@ const Navbar = () => {
   return (
     <div className="nav-bar">
       <div>
-        <a href="/"><img src="./images/Quotablelogo1.png" width="170" height="80"></img></a>
+        <a href="/"><img src="./images/Quotable-logoblk.png" width="230" height="130"></img></a>
       </div>
       <div className="nav-bar">
         <a href="/quotes" className="allQuotes">Quotes</a>
