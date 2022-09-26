@@ -110,7 +110,7 @@ a:active {
   background-size: cover;
   text-align: center;
   height:100vh;
-  padding-top: 150px;
+  padding-top: 180px;
   margin: 10px;
   font-style: italic;
 }
@@ -120,10 +120,14 @@ a:active {
 
 .all-quotes {
 /* background-color: rgb(152,163,165); */
-background-image: url("/public/images/wood-panel.jpg");
+/* background-image: url("/public/images/wood-panel.jpg"); */
+/* background-image: url("https://www.teahub.io/photos/full/279-2796356_maple-leave-falling-on-empty-road-bheed-mein.jpg"); */
+background-image: url("https://wallup.net/wp-content/uploads/2019/10/30678-selective-black-white-bokeh-autumn-fall.jpg");
 background-repeat: repeat-y;
-background-size:contain;
-margin: 10px;
+background-size:cover;
+background-attachment: fixed;
+margin: 10px 10px 10px 10px;
+padding: 30px 5%;
 float: left;
 /* max-width: 55%; */
 display: flex;
