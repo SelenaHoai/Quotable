@@ -37,7 +37,9 @@ a:active {
 .allQuotes {
   color: white;
   text-decoration: none;
-  
+  background-color: black;
+  border: none;
+  padding: 14px 16px;
 }
 
 .navbar {
@@ -55,10 +57,10 @@ a:active {
   text-decoration: none;
 }
 
-.dropdown {
+/* .dropdown {
   float: left;
   overflow: hidden;
-}
+} */
 
 .dropdown .dropbtn {
   cursor: pointer;
@@ -76,25 +78,26 @@ a:active {
   background-color: rgba(231, 229, 243, 0.76);
 }
 
-.dropdown-content {
-  display: none;
+#dropdown_content {
+  display:none;
   position: absolute;
+  color: rgb(214, 8, 8);
   background-color: #f9f9f9;
   min-width: 160px;
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
   z-index: 1;
 }
 
-.dropdown-content a {
+#dropdown_content a {
   float: none;
-  color: black;
+  color: purple;
   padding: 12px 16px;
   text-decoration: none;
   display: block;
   text-align: left;
 }
 
-.dropdown-content a:hover {
+#dropdown_content a:hover {
   background-color: #ddd;
 }
 
