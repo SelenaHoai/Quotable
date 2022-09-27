@@ -32,6 +32,14 @@ const Navbar = () => {
       document.getElementById("dropdown_content").style.display="none";
   }
 
+  const showTopicDropdown = () => {
+    document.getElementById("dropdown_content").style.display="inherit";
+}
+
+const hideTopicDropdown = () => {
+    document.getElementById("dropdown_content").style.display="none";
+}
+
   return (
     <div className="nav-bar">
       <div>
@@ -68,8 +76,8 @@ const Navbar = () => {
             <a href="#">Isaac Newton</a>
           </div>
         </div>
-        {/* <div>
-          <h2><label for="topics">Topics: </label></h2>
+        <div>
+          {/* <h2><label for="topics">Topics: </label></h2>
           <select onChange={(e) => getCategory(e.target.value)} value={topic}>
             <option value="alltopics">All Topics</option>
             <option value="inspiration">Inspiration</option>
@@ -79,16 +87,16 @@ const Navbar = () => {
             <option value="reminder">Reminder</option>
             <option value="change">Change</option>
             <option value="love">Love</option>
-          </select>
+          </select> */}
           <div className="dropdown">
-            <button className="dropbtn" onClick={myFuction()}>Topics <i className="fa fa-caret-down"></i></button>
-            <div className="dropdown-content" id="myDropdown">
+            <button className="dropbtn" onMouseOver={showTopicDropdown} onMouseOut={hideTopicDropdown}>Topics <i className="fa fa-caret-down"></i></button>
+            <div id="dropdown_content">
               <a href="#">inspiration</a>
               <a href="#">motivation</a>
               <a href="#">travel</a>
             </div>
           </div>
-        </div> */}
+        </div>
       </div>
       {/* <div className="nav-bar">
         <button onClick="#" style={{marginRight:10, color:"blue", backgroundColor:"white"}}>Register</button>
