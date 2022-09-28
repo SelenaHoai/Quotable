@@ -25,19 +25,19 @@ const Navbar = () => {
   }
 
   const showAuthorDropdown = () => {
-      document.getElementById("dropdown_content").style.display="inherit";
+      document.getElementById("dropdown_author_content").style.display="inherit";
   }
 
   const hideAuthorDropdown = () => {
-      document.getElementById("dropdown_content").style.display="none";
+      document.getElementById("dropdown_author_content").style.display="none";
   }
 
   const showTopicDropdown = () => {
-    document.getElementById("dropdown_content").style.display="inherit";
+    document.getElementById("dropdown_topic_content").style.display="inherit";
 }
 
 const hideTopicDropdown = () => {
-    document.getElementById("dropdown_content").style.display="none";
+    document.getElementById("dropdown_topic_content").style.display="none";
 }
 
   return (
@@ -70,10 +70,20 @@ const hideTopicDropdown = () => {
         </div> */}
         <div className="dropdown">
           <button className="dropbtn" onMouseOver={showAuthorDropdown} onMouseOut={hideAuthorDropdown}>Authors <i className="fa fa-caret-down"></i></button>
-          <div id="dropdown_content">
-            <a href="#">Tony Robbins</a>
-            <a href="#">Roy Bennett</a>
+          <div id="dropdown_author_content">
+            <a href="#">Andre Gide</a>
+            <a href="#">Anita Desai</a>
+            <a href="#">Arthur Ashe</a>
+            <a href="#">Helen Keller</a>
+            <a href="#">Ibn Battuta</a>
             <a href="#">Isaac Newton</a>
+            <a href="#">Lao Tzu</a>
+            <a href="#">Mother Theresa</a>
+            <a href="#">Ralph W. Emerson</a>
+            <a href="#">Roy T. Bennett</a>
+            <a href="#">Stephen King</a>
+            <a href="#">Thich Nhat Hanh</a>
+            <a href="#">Tony Robbins</a>
           </div>
         </div>
         <div>
@@ -90,10 +100,14 @@ const hideTopicDropdown = () => {
           </select> */}
           <div className="dropdown">
             <button className="dropbtn" onMouseOver={showTopicDropdown} onMouseOut={hideTopicDropdown}>Topics <i className="fa fa-caret-down"></i></button>
-            <div id="dropdown_content">
-              <a href="#">inspiration</a>
-              <a href="#">motivation</a>
-              <a href="#">travel</a>
+            <div id="dropdown_topic_content">
+              <a href="#">Change</a>
+              <a href="#">Inspiration</a>
+              <a href="#">Love</a>
+              <a href="#">Motivation</a>
+              <a href="#">Philosophy</a>
+              <a href="#">Travel</a>
+              <a href="#">Reminder</a>
             </div>
           </div>
         </div>

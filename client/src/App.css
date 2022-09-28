@@ -78,26 +78,55 @@ a:active {
   background-color: rgba(231, 229, 243, 0.76);
 }
 
-#dropdown_content {
+#dropdown_author_content {
   display:none;
   position: absolute;
   color: rgb(214, 8, 8);
-  background-color: #f9f9f9;
-  min-width: 160px;
+  background-color: #050505;
+  min-width: 180px;
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
   z-index: 1;
+  height:350px;
+  overflow-y: scroll; 
 }
 
-#dropdown_content a {
+#dropdown_author_content a {
   float: none;
-  color: purple;
+  color: rgb(247, 244, 247);
   padding: 12px 16px;
   text-decoration: none;
+  font-size:20px;
   display: block;
   text-align: left;
 }
 
-#dropdown_content a:hover {
+#dropdown_author_content a:hover {
+  background-color: #ddd;
+}
+
+#dropdown_topic_content {
+  display:none;
+  position: absolute;
+  color: rgb(214, 8, 8);
+  background-color: #050505;
+  min-width: 180px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+  height:350px;
+  overflow-y: scroll; 
+}
+
+#dropdown_topic_content a {
+  float: none;
+  color: rgb(247, 244, 247);
+  padding: 12px 16px;
+  text-decoration: none;
+  font-size:20px;
+  display: block;
+  text-align: left;
+}
+
+#dropdown_topic_content a:hover {
   background-color: #ddd;
 }
 
