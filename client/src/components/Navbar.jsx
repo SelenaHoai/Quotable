@@ -68,8 +68,8 @@ const hideTopicDropdown = () => {
             <option value="anitadesai">Anita Desai</option>
           </select>
         </div> */}
-        <div className="dropdown">
-          <button className="dropbtn" onMouseOver={showAuthorDropdown} onMouseOut={hideAuthorDropdown}>Authors <i className="fa fa-caret-down"></i></button>
+        <div className="dropdown" onMouseOver={showAuthorDropdown} onMouseOut={hideAuthorDropdown}>
+          <button className="dropbtn">Authors <i className="fa fa-caret-down"></i></button>
           <div id="dropdown_author_content">
             <a href="#">Andre Gide</a>
             <a href="#">Anita Desai</a>
@@ -98,8 +98,8 @@ const hideTopicDropdown = () => {
             <option value="change">Change</option>
             <option value="love">Love</option>
           </select> */}
-          <div className="dropdown">
-            <button className="dropbtn" onMouseOver={showTopicDropdown} onMouseOut={hideTopicDropdown}>Topics <i className="fa fa-caret-down"></i></button>
+          <div className="dropdown" onMouseOver={showTopicDropdown} onMouseOut={hideTopicDropdown}>
+            <button className="dropbtn">Topics <i className="fa fa-caret-down"></i></button>
             <div id="dropdown_topic_content">
               <a href="#">Change</a>
               <a href="#">Inspiration</a>
