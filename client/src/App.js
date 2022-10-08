@@ -34,7 +34,7 @@ const App = () => {
   //     })
   //     .catch(err => {
   //         console.log("XXXX", err);
-  //     })
+  //     })vi
   // }, [update])
 
   const removeFromDom = QuoteId => {
@@ -48,13 +48,13 @@ const App = () => {
       {/* <Main/> */}
       <Navbar/>
       <div>
-            <Routes>
-                <Route path='/' element={<Main/>} />
-                <Route path='/quotes' element={<Quotes allQuotes={allQuotes} removeFromDom={removeFromDom} />} />
-                <Route path='/quotes/new' element={<Form setAllQuotes={setAllQuotes} allQuotes={allQuotes}/>} />
-                {/* <Route path='/quotes/:id' element={<View/>}/> */}
-                {/* <Route path='/quotes/:id' element={<View setUpdate = {setUpdate} update = {update}/>} /> */}
-            </Routes>
+        <Routes>
+            <Route path='/' element={<Main/>} />
+            <Route path='/quotes' element={<Quotes allQuotes={allQuotes} removeFromDom={removeFromDom} />} />
+            <Route path='/quotes/new' element={<Form setAllQuotes={setAllQuotes} allQuotes={allQuotes}/>} />
+            {/* <Route path='/quotes/:id' element={<View/>}/> */}
+            {/* <Route path='/quotes/:id' element={<View setUpdate = {setUpdate} update = {update}/>} /> */}
+        </Routes>
         </div>
 
     </div>
