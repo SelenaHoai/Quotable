@@ -32,12 +32,18 @@ module.exports = {
     },
 
     // READ TOPIC
+    // findAllByTopic: (req, res) => {
+    //     Quotable.find({topic:req.params.topic})
+    //     .then(oneTopicQuote => res.json({topic:oneTopicQuote}))
+    //     .catch(err => res.status(400).json({ message: 'Error finding a quote', error: err }));
+    // },
+
     findAllByTopic: (req, res) => {
-        Quotable.findOneTopic({topic:req.params.topic})
-        .then(oneTopicQuote => res.json({topic:oneTopicQuote}))
+        Quotable.find({})
+        .then(allQuotes => res.json({topic: allQuotes.filter(quote => quote.topic === req.params.topic)}))
         .catch(err => res.status(400).json({ message: 'Error finding a quote', error: err }));
     },
-    
+
 
     // READ RANDOM
     findRandomQuote: (req, res) => {
