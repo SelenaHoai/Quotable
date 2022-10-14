@@ -45,7 +45,7 @@ const topicChange = () => {
   testingChange.addEventListener('click', function(e) { 
     const changing = e.target.closest(this.data)
   })
-  navigate("/quotes/topics/:topic")
+  navigate(`/quotes/topics/{topic}`)
 }
 
   return (
@@ -109,7 +109,7 @@ const topicChange = () => {
           <div className="dropdown" onMouseOver={showTopicDropdown} onMouseOut={hideTopicDropdown}>
             <button className="dropbtn">Topics <i className="fa fa-caret-down"></i></button>
             <div id="dropdown_topic_content">
-              <a href="/quotes/topics/:topic" data-id="change">Change</a>
+              <a href={'/quotes/topics/'+topic} data-id="change">Change</a>
               <a href="#">Inspiration</a>
               <a href="#">Love</a>
               <a href="#">Motivation</a>
