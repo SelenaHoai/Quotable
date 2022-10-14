@@ -40,7 +40,7 @@ module.exports = {
 
     findAllByTopic: (req, res) => {
         Quotable.find({})
-        .then(allQuotes => res.json({topic: allQuotes.filter(quote => quote.topic === req.params.topic)}))
+        .then(allQuotes => res.json({topic: allQuotes.filter(quote => quote.topic .toLowerCase() === req.params.topic)}))
         .catch(err => res.status(400).json({ message: 'Error finding a quote', error: err }));
     },
 
