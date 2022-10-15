@@ -38,11 +38,19 @@ module.exports = {
     //     .catch(err => res.status(400).json({ message: 'Error finding a quote', error: err }));
     // },
 
+    // READ TOPIC
     findAllByTopic: (req, res) => {
         Quotable.find({})
         .then(allQuotes => res.json({topic: allQuotes.filter(quote => quote.topic .toLowerCase() === req.params.topic)}))
         .catch(err => res.status(400).json({ message: 'Error finding a quote', error: err }));
     },
+
+    // // READ AUTHOR
+    // findAllByAuthor: (req, res) => {
+    //     Quotable.find({})
+    //     .then(allQuotes => res.json({name: allQuotes.filter(quote => quote.name .toLowerCase() === req.params.name)}))
+    //     .catch(err => res.status(400).json({ message: 'Error finding a quote', error: err }));
+    // },
 
 
     // READ RANDOM
