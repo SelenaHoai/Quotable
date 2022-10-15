@@ -198,3 +198,27 @@ flex-wrap:  wrap;
   background-color: rgb(226, 207, 215);
 
 }
+
+/**************** TOPIC PAGE ***************/
+
+.dropdown-page {
+  background-image: url("https://wallup.net/wp-content/uploads/2019/10/30678-selective-black-white-bokeh-autumn-fall.jpg");
+  background-repeat: repeat-y;
+  background-size:cover;
+  background-attachment: fixed;
+  margin: 10px 10px 10px 10px;
+  padding: 30px 5%; 
+
+}
+
+.testing-layout {
+  float: left;
+  display: flex;
+  flex-wrap:  wrap;
+}
+
+.sub-titles {
+  color: white;
+  text-align:center;
+  font-size: 50px;
+}

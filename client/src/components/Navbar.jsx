@@ -45,7 +45,7 @@ const hideTopicDropdown = () => {
     document.getElementById("dropdown_topic_content").style.display="none";
 }
 
-const testingChange = document.getElementById("dropdown_topic_content");
+// const testingChange = document.getElementById("dropdown_topic_content");
 // const topicChange = () => {
 //   testingChange.addEventListener('click', function(e) { 
 //     const changing = e.target.closest(this.data)

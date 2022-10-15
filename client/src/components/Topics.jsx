@@ -31,8 +31,14 @@ const Topics = (props) => {
 
     return (
         <div>
-            <div> 
-                <h1 style={{textAlign:"center"}}>THIS IS All Quotes by TOPIC Page</h1>
+            <div>
+                {/* {quotes.map((subtitleShow) => {
+                    return (
+                        <h1 style={{textAlign:"center"}}>TOPIC NAME {subtitleShow.topic}</h1>
+                    )
+                })} */}
+                <h1 style={{textAlign:"center"}}>TOPIC NAME {quotes.topic}</h1>
+                
             </div>
             <div className="all-quotes">
                 {quotes.map((quotesShow) => {
@@ -42,8 +48,7 @@ const Topics = (props) => {
                         <p style={{textAlign:"end"}}>{quotesShow.author}</p>
                     </div>
                     )
-                })
-            }
+                })}
             </div>
         </div>
     );
