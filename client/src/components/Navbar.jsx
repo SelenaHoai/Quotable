@@ -5,8 +5,8 @@ import {useNavigate} from 'react-router-dom';
 
 
 const Navbar = () => {
-    const [name, setAuthorName] = useState("");
-    const [topic, setTopicName] = useState("");
+    const [name, setAuthor] = useState("");
+    const [topic, setTopic] = useState("");
     const navigate = useNavigate();
     // const [flip, setFlip] = useState("");
 
@@ -111,8 +111,8 @@ const topicChange = () => {
           <div className="dropdown" onMouseOver={showTopicDropdown} onMouseOut={hideTopicDropdown}>
             <button className="dropbtn">Topics <i className="fa fa-caret-down"></i></button>
             <div id="dropdown_topic_content">
-              <a href={`/quotes/topics/${topic}`} data-id="Change">Change</a>
-              <a href="#">Inspiration</a>
+              <a href={`/quotes/topics/${topic}`} data-id="Change" onChange={() => setTopic('change')}>Change</a>
+              <a href={`/quotes/topics/${topic}`} data-id="Inspiration" onChange={() => setTopic('inspiration')}>Inspiration</a>
               <a href="#">Love</a>
               <a href="#">Motivation</a>
               <a href="#">Philosophy</a>
