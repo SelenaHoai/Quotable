@@ -6,7 +6,7 @@ import {Link} from 'react-router-dom'
 
 // EXPORT
 const Form = (props) => {
-    const [name, setName] = useState("");
+    const [author, setAuthor] = useState("");
     const [topic, setTopic] = useState("");
     const [quote, setQuote] = useState("");
 
@@ -21,7 +21,7 @@ const Form = (props) => {
 
         //create the obj
         const newQuote = {
-            name,
+            author,
             topic,
             quote,
             isFavorite,
@@ -72,33 +72,19 @@ const Form = (props) => {
                 <form onSubmit={createQuote}>
                     <div>
                         <label>Author Name: </label>
-                        <select onChange={(e) =>setName(e.target.value)} value={name}>
-                            <option value='Tony Robbins'>Tony Robbins</option>
-                            <option value='Roy Bennett'>Roy Bennett</option>
-                            <option value='Isaac Newton'>Isaac Newton</option>
-                            <option value="Stephen King">Stephen King</option>
-                            <option value="Thich Nhat Hanh">Thich Nhat Hanh</option>
-                            <option value="Mother Theresa">Mother Theresa</option>
-                            <option value="Ralph W. Emerson">Ralph W. Emerson</option>
-                            <option value="Helen Keller">Helen Keller</option>
-                            <option value="Roy T. Bennett">Roy T. Bennett</option>
-                            <option value="Arthur Ashe">Arthur Ashe</option>
-                            <option value="Lao Tzu">Lao Tzu</option>
-                            <option value="Andre Gide">Andre Gide</option>
-                            <option value="Ibn Battuta">Ibn Battuta</option>
-                            <option value="Anita Desai">Anita Desai</option>
+                        <select onChange={(e) =>setAuthor(e.target.value)} value={author}>
+                            <option value="reesewitherspoon">Reese Witherspoon</option>
+                            <option value="elberthubbard">Elbert Hubbard</option>
+                            <option value="mothertheresa">Mother Theresa</option>
+                            <option value="thichnhathanh">Thich Nhat Hanh</option>
                         </select>
                     </div>
                     <div style={{marginTop:10, marginBottom:10}}>
                         <label>Topic: </label>
                         <select onChange={(e) =>setTopic(e.target.value)} value={topic}>
-                            <option value="Inspiration">Inspiration</option>
-                            <option value="Motivation">Motivation</option>
-                            <option value="Travel">Travel</option>
-                            <option value="Philosophy">Philosophy</option>
-                            <option value="Reminder">Reminder</option>
-                            <option value="Change">Change</option>
-                            <option value="Love">Love</option>
+                            <option value="motivation">Motivation</option>
+                            <option value="travel">Travel</option>
+                            <option value="love">Love</option>
                         </select>
                     </div>
                     <div>

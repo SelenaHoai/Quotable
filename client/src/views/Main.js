@@ -29,7 +29,7 @@ const Main = () => {
         <div className="main-page">
             {/* <h1>This is MAIN page</h1> */}
             <h3>"{ranQuote.quote}"</h3>
-            <h3>{ranQuote.name}</h3>
+            <h3>{ranQuote.author}</h3>
 
         </div>
     );

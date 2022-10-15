@@ -41,8 +41,8 @@ const Quotes = (props) => {
                 return (
                     <div key={quoteshow._id} className="quote-box">
                         <p>"{quoteshow.quote}"</p>
-                        <p style={{textAlign:"end"}}>{quoteshow.name}</p>
-                        {/* <img src={"./images/trash1.png"} onClick={(e) => {deleteQuote(quoteshow._id)}} style={{width:35, height:30, cursor:"pointer"}} /> */}
+                        <p style={{textAlign:"end"}}>{quoteshow.author}</p>
+                        <img src={"./images/trash1.png"} onClick={(e) => {deleteQuote(quoteshow._id)}} style={{width:35, height:30, cursor:"pointer"}} />
                     </div>
                     )
                 })

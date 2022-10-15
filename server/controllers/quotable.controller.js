@@ -45,12 +45,12 @@ module.exports = {
         .catch(err => res.status(400).json({ message: 'Error finding a quote', error: err }));
     },
 
-    // // READ AUTHOR
-    // findAllByAuthor: (req, res) => {
-    //     Quotable.find({})
-    //     .then(allQuotes => res.json({name: allQuotes.filter(quote => quote.name .toLowerCase() === req.params.name)}))
-    //     .catch(err => res.status(400).json({ message: 'Error finding a quote', error: err }));
-    // },
+    // READ AUTHOR
+    findAllByAuthor: (req, res) => {
+        Quotable.find({})
+        .then(allQuotes => res.json({author: allQuotes.filter(quote => quote.author .toLowerCase() === req.params.author)}))
+        .catch(err => res.status(400).json({ message: 'Error finding a quote', error: err }));
+    },
 
 
     // READ RANDOM

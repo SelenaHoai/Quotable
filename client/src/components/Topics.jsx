@@ -5,30 +5,41 @@ import { useParams } from "react-router-dom";
 
     
 const Topics = (props) => {
-    const [topic, setTopic] = useState({})
-    // const [quotes, setQuotes] = useState({})
-    const { id } = useParams();
+    // const [topic, setTopic] = useState({})
+    const [quotes, setQuotes] = useState([])
+    const { removeFromDom } = props;
+    const { topic } = useParams();
     // const navigate = useNavigate();
     
     useEffect(() => {
-        axios.get(`http://localhost:8000/api/quotes/${id}`)
-            .then(res => {setTopic(res.data)
+        axios.get(`http://localhost:8000/api/quotes/topics/${topic}`)
+            .then(res => {setQuotes(res.data.topic)
             console.log(res)})
             .catch(err => console.error(err));
-    }, [id]);
+    }, [topic]);
     console.log(props)
     
+    // DELETE
+    const deleteQuote = (QuoteId) => {
+        axios.delete(`http://localhost:8000/api/quotes/delete/${QuoteId}`) // make a request to the DB to delete
+        .then(res => {
+            removeFromDom(QuoteId);
+        })
+        .catch(err => console.error(err));
+    }
+
+
     return (
         <div>
             <div> 
                 <h1 style={{textAlign:"center"}}>THIS IS All Quotes by TOPIC Page</h1>
             </div>
             <div className="all-quotes">
-                {props.allQuotes.map((topicshow) => {
+                {quotes.map((quotesShow) => {
                 return (
-                    <div key={topicshow._id} className="aquote-box">
-                        <p>"{topicshow.quote}"</p>
-                        <p style={{textAlign:"end"}}>{topicshow.name}</p>
+                    <div key={quotesShow._id} className="quote-box">
+                        <p>"{quotesShow.quote}"</p>
+                        <p style={{textAlign:"end"}}>{quotesShow.author}</p>
                     </div>
                     )
                 })

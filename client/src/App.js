@@ -5,9 +5,10 @@ import Main from './views/Main'
 import Navbar from './components/Navbar'
 import Form from './components/Form';
 import Quotes from './components/Quotes'
-// import Topics from '../components/Topics';
+import Topics from './components/Topics';
 // import Authors from '../components/Authors';
 import {Routes, Route} from 'react-router-dom';
+
 
 
 const App = () => {
@@ -52,6 +53,7 @@ const App = () => {
             <Route path='/' element={<Main/>} />
             <Route path='/quotes' element={<Quotes allQuotes={allQuotes} removeFromDom={removeFromDom} />} />
             <Route path='/quotes/new' element={<Form setAllQuotes={setAllQuotes} allQuotes={allQuotes}/>} />
+            <Route path='/quotes/topics/:topic' element={<Topics allQuotes={allQuotes} removeFromDom={removeFromDom} />} />
             {/* <Route path='/quotes/:id' element={<View/>}/> */}
             {/* <Route path='/quotes/:id' element={<View setUpdate = {setUpdate} update = {update}/>} /> */}
         </Routes>

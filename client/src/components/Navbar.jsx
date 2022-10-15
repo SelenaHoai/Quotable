@@ -1,14 +1,15 @@
 import React, {useState} from 'react';
 import axios from 'axios';
-import {useNavigate} from 'react-router-dom';
+import {useNavigate, useParams} from 'react-router-dom';
 import { Link } from 'react-router-dom';
 
 
 
 const Navbar = () => {
-    const [name, setAuthor] = useState("");
-    const [topic, setTopic] = useState("");
-    // const {topic} = useParams();
+    // const [author, setAuthor] = useState("");
+    // const [topic, setTopic] = useState("");
+    const {topic} = useParams();
+    const {author} = useParams();
     const navigate = useNavigate();
     // const [flip, setFlip] = useState("");
 
@@ -45,12 +46,12 @@ const hideTopicDropdown = () => {
 }
 
 const testingChange = document.getElementById("dropdown_topic_content");
-const topicChange = () => {
-  testingChange.addEventListener('click', function(e) { 
-    const changing = e.target.closest(this.data)
-  })
-  navigate(`http://localhost:8000/api/quotes/topics/${topic}`)
-}
+// const topicChange = () => {
+//   testingChange.addEventListener('click', function(e) { 
+//     const changing = e.target.closest(this.data)
+//   })
+//   navigate(`http://localhost:8000/api/quotes/topics/${topic}`)
+// }
 
   return (
     <div className="nav-bar">
@@ -83,19 +84,10 @@ const topicChange = () => {
         <div className="dropdown" onMouseOver={showAuthorDropdown} onMouseOut={hideAuthorDropdown}>
           <button className="dropbtn">Authors <i className="fa fa-caret-down"></i></button>
           <div id="dropdown_author_content">
-            <a href="#">Andre Gide</a>
-            <a href="#">Anita Desai</a>
-            <a href="#">Arthur Ashe</a>
-            <a href="#">Helen Keller</a>
-            <a href="#">Ibn Battuta</a>
-            <a href="#">Isaac Newton</a>
-            <a href="#">Lao Tzu</a>
-            <a href="#">Mother Theresa</a>
-            <a href="#">Ralph W. Emerson</a>
-            <a href="#">Roy T. Bennett</a>
-            <a href="#">Stephen King</a>
-            <a href="#">Thich Nhat Hanh</a>
-            <a href="#">Tony Robbins</a>
+            <a href={`/quotes/authors/reesewitherspoon`} data-id="reesewitherspoon">Reese Witherspoon</a>
+            <a href={`/quotes/authors/elberthubbard`} data-id="elberthubbard">Elbert Hubbard</a>
+            <a href={`/quotes/authors/mothertheresa`} data-id="mothertheresa">Mother Theresa</a>
+            <a href={`/quotes/authors/thichnhathanh`} data-id="thichnhathanh">Thich Nhat Hanh</a>
           </div>
         </div>
         <div>
@@ -113,14 +105,9 @@ const topicChange = () => {
           <div className="dropdown" onMouseOver={showTopicDropdown} onMouseOut={hideTopicDropdown}>
             <button className="dropbtn">Topics <i className="fa fa-caret-down"></i></button>
             <div id="dropdown_topic_content">
-              <Link to={"/quotes/new/"} data-id="Change" onChange={() => setTopic('change')}>Change</Link>
-
-              <Link to={"/quotes/topics/:inspiration"} data-id="Inspiration" onChange={() => setTopic('inspiration')}>Inspiration</Link>
-              <a href="#">Love</a>
-              <a href="#">Motivation</a>
-              <a href="#">Philosophy</a>
-              <a href="#">Travel</a>
-              <a href="#">Reminder</a>
+              <a href={`/quotes/topics/love`} data-id="love">Love</a>
+              <a href={`/quotes/topics/motivation`} data-id="motivation">Motivation</a>
+              <a href={`/quotes/topics/travel`} data-id="travel">Travel</a>
             </div>
           </div>
         </div>

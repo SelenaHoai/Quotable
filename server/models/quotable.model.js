@@ -4,7 +4,7 @@ const mongoose = require('mongoose');
 // the schema - the rules that the entries in the db must follow
 const QuotableSchema = new mongoose.Schema(
 {
-    name: {
+    author: {
         type: String,
         required: [true, "author name is required"],
         // minlength: [3, "Author name must be at least 3 characters long"]
@@ -19,7 +19,7 @@ const QuotableSchema = new mongoose.Schema(
     },
     isFavorite: {
         type: Boolean,
-        default: true,
+        default: false,
     },
 }, {timestamps: true});
 
