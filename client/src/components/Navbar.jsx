@@ -49,7 +49,7 @@ const topicChange = () => {
   testingChange.addEventListener('click', function(e) { 
     const changing = e.target.closest(this.data)
   })
-  navigate(`/quotes/topics/${topic}`)
+  navigate(`http://localhost:8000/api/quotes/topics/${topic}`)
 }
 
   return (
@@ -113,8 +113,9 @@ const topicChange = () => {
           <div className="dropdown" onMouseOver={showTopicDropdown} onMouseOut={hideTopicDropdown}>
             <button className="dropbtn">Topics <i className="fa fa-caret-down"></i></button>
             <div id="dropdown_topic_content">
-              <Link to={`/quotes/topics/${topic}`} data-id="Change" onChange={() => setTopic('change')}>Change</Link>
-              <a href={`/quotes/topics/${topic}`} data-id="Inspiration" onChange={() => setTopic('inspiration')}>Inspiration</a>
+              <Link to={"/quotes/new/"} data-id="Change" onChange={() => setTopic('change')}>Change</Link>
+
+              <Link to={"/quotes/topics/:inspiration"} data-id="Inspiration" onChange={() => setTopic('inspiration')}>Inspiration</Link>
               <a href="#">Love</a>
               <a href="#">Motivation</a>
               <a href="#">Philosophy</a>
