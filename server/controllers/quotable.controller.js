@@ -5,14 +5,6 @@ const Quotable = require("../models/quotable.model");
 
 module.exports = {
 
-    // READ ALL
-    findAll: (req, res) => {
-        Quotable.find({})
-        .then( (quotes) => {
-            return res.json(quotes)
-        })
-        .catch(err => res.status(400).json({message: 'Something went wrong', error:err}));  
-    },
 
     // CREATE
     create: (req, res) => {
@@ -24,19 +16,21 @@ module.exports = {
         .catch(err => res.status(400).json(err));
     },
 
+    // READ ALL
+    findAll: (req, res) => {
+        Quotable.find({})
+        .then( (quotes) => {
+            return res.json(quotes)
+        })
+        .catch(err => res.status(400).json({message: 'Something went wrong', error:err}));  
+    },
+
     // READ ONE
     findOne: (req, res) => {
         Quotable.findById(req.params.id)
         .then(oneSingleQuote => res.json(oneSingleQuote))
         .catch(err => res.status(400).json({ message: 'Error finding a quote', error: err }));
     },
-
-    // READ TOPIC
-    // findAllByTopic: (req, res) => {
-    //     Quotable.find({topic:req.params.topic})
-    //     .then(oneTopicQuote => res.json({topic:oneTopicQuote}))
-    //     .catch(err => res.status(400).json({ message: 'Error finding a quote', error: err }));
-    // },
 
     // READ TOPIC
     findAllByTopic: (req, res) => {
@@ -52,7 +46,6 @@ module.exports = {
         .catch(err => res.status(400).json({ message: 'Error finding a quote', error: err }));
     },
 
-
     // READ RANDOM
     findRandomQuote: (req, res) => {
         Quotable.find(req.params.id)
@@ -61,17 +54,7 @@ module.exports = {
             res.json(ranQuote[randomQuote]);
         })
         .catch(err => res.status(400).json({message: 'Something went wrong', error: err}));
-    },  
-
-    // // READ ALL RANDOM
-    // findAllRandomQuote: (req, res) => {
-    //     Quotable.aggregate()
-    //     .then(ranQuote => {
-    //         // let randomQuote=Math.floor(Math.random() * ranQuote.length);
-    //         res.json({ $sample: { size: ranQuote} });
-    //     })
-    //     .catch(err => res.status(400).json({message: 'Something went wrong', error: err}));
-    // },  
+    },   
 
     // UPDATE
     update: (req, res) => {
@@ -88,5 +71,4 @@ module.exports = {
         .then(result => res.json(result))
         .catch(err => res.status(400).json({ message: 'Error unable to delete a quote', error: err }));
     }
-
 }
