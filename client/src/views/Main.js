@@ -10,12 +10,6 @@ import axios from 'axios';
 const Main = () => {
     const [ranQuote, setRanQuote] = useState({})
 
-    // useEffect(() => {
-    //     axios.get('http://localhost:8000/api/')
-    //         .then(res => {setRanQuote(res.data)
-    //         console.log(res)})
-    //         .catch(err => console.error(err));
-    // }, []);
 
     useEffect(() => {
         setInterval(
@@ -27,7 +21,6 @@ const Main = () => {
 
     return (
         <div className="main-page">
-            {/* <h1>This is MAIN page</h1> */}
             <h3>"{ranQuote.quote}"</h3>
             <h3>{ranQuote.author}</h3>
 

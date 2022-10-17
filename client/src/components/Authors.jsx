@@ -31,9 +31,6 @@ const Authors = (props) => {
 
     return (
         <div>
-            <div> 
-                <h1 style={{textAlign:"center"}}>AUTHOR NAME</h1>
-            </div>
             <div className="all-quotes">
                 {quotes.map((quotesShow) => {
                 return (
