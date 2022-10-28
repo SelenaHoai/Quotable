@@ -1,6 +1,8 @@
-import React from 'react';
+import axios from 'axios';
+import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Link } from 'react-router-dom';
+// import logoImage from '../../public/images/Quotable-logoblk.png';
 
 // import React, {useState} from 'react';
 // import axios from 'axios';
@@ -9,12 +11,40 @@ import { Link } from 'react-router-dom';
 
 
 const Navbar = (props) => {
-    // const [author, setAuthor] = useState("");
-    // const [topic, setTopic] = useState("");
+    const [allAuthors, setAllAuthors] = useState([]);
+    const [allTopics, setAllTopics] = useState([]);
     // const {topic} = useParams();
     // const {author} = useParams();
     const navigate = useNavigate();
     // const [flip, setFlip] = useState("");
+    const [errors, setErrors] = useState([]); 
+    
+
+  useEffect (() => {
+    let tempAuthors = [];
+    props.allQuotes.forEach(quotes => {
+      if (!tempAuthors.includes(quotes.author)) {
+        tempAuthors.push(quotes.author)
+      }
+    })
+    setAllAuthors(tempAuthors);
+
+    console.log(allAuthors)
+  }, [props.allQuotes])
+
+
+  useEffect (() => {
+    let tempTopics = [];
+    props.allQuotes.forEach(quotes => {
+      if (!tempTopics.includes(quotes.topic)) {
+        tempTopics.push(quotes.topic)
+      }
+    })
+    setAllTopics(tempTopics);
+
+    console.log(allTopics)
+  }, [props.allQuotes])
+
 
 
   const goToQuotes = () => {
@@ -41,17 +71,17 @@ const hideTopicDropdown = () => {
   return (
     <div className="nav-bar">
       <div>
-        <a href="/"><img src="./images/Quotable-logoblk.png" alt="QuotableLogo" width="230" height="130"></img></a>
+        <a href="/"><img src="/images/Quotable-logoblk.png" alt="QuotableLogo" width="230" height="130"></img></a>
       </div>
       <div className="nav-bar">
         <button className="allQuotes" onClick={goToQuotes}>Quotes</button>
         <div className="dropdown" onMouseOver={showAuthorDropdown} onMouseOut={hideAuthorDropdown}>
           <button className="dropbtn">Authors <i className="fa fa-caret-down"></i></button>
           <div id="dropdown_author_content">{
-            props.allDaQuotes?.map((theQuote) => {
+            allAuthors.map((author,idx) => {
               return (
-                <div key={theQuote._id}>
-                  <Link to={`/quotes/authors/${theQuote._id}`}>{theQuote.author}</Link>
+                <div key={idx}>
+                  <Link to={`/quotes/authors/${author}`}>{author}</Link>
                 </div>
               )
             })
@@ -62,10 +92,10 @@ const hideTopicDropdown = () => {
         <div className="dropdown" onMouseOver={showTopicDropdown} onMouseOut={hideTopicDropdown}>
           <button className="dropbtn">Topics <i className="fa fa-caret-down"></i></button>
           <div id="dropdown_topic_content">{
-            props.allDaQuotes?.map((theQuote) => {
+            allTopics.map((topic,idx) => {
               return (
-                <div key={theQuote.id}>
-                  <Link to={`/quotes/topics/${theQuote.id}`}>{theQuote.topic}</Link>
+                <div key={idx}>
+                  <Link to={`/quotes/topics/${topic}`}>{topic}</Link>
                 </div>
               )
             })

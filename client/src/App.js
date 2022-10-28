@@ -47,7 +47,7 @@ const App = () => {
   return (
     <div>
       {/* <Main/> */}
-      <Navbar/>
+      <Navbar allQuotes={allQuotes}/>
       <div>
         <Routes>
             <Route path='/' element={<Main/>} />

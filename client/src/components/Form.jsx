@@ -33,12 +33,14 @@ const Form = (props) => {
         axios.post("http://localhost:8000/api/quotes/new", newQuote)
         .then(res => {
             console.log("SUCCESS", res.data)
-            props.setAllDaQuotes([...props.allDaQuotes,res.data]);
+            props.setAllQuotes([...props.allQuotes,res.data]);
             navigate('/quotes', {replace:true})
         })
         .catch(err => {
-            const errorResponse = err.response.data.errors; 
+            console.log(err)
+            const errorResponse = err.data.errors; 
             const errorArr = []; 
+
             for (const key of Object.keys(errorResponse)) { 
                 errorArr.push(errorResponse[key].message)
             }
