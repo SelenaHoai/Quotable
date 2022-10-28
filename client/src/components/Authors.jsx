@@ -39,8 +39,7 @@ const Authors = (props) => {
                         <p style={{textAlign:"end"}}>{quotesShow.author}</p>
                     </div>
                     )
-                })
-            }
+                })}
             </div>
         </div>
     );
