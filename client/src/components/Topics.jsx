@@ -31,15 +31,6 @@ const Topics = (props) => {
 
     return (
         <div>
-            <div>
-                {/* {quotes.map((subtitleShow) => {
-                    return (
-                        <h1 style={{textAlign:"center"}}>TOPIC NAME {subtitleShow.topic}</h1>
-                    )
-                })} */}
-                <h1 style={{textAlign:"center"}}>TOPIC NAME {quotes.topic}</h1>
-                
-            </div>
             <div className="all-quotes">
                 {quotes.map((quotesShow) => {
                 return (
