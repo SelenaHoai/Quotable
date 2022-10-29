@@ -65,29 +65,33 @@ const Form = (props) => {
     // }
         
     return (
-        <div className="add-quote-page">
+        <div className="add-quote">
             <div className="add-form">
-                <div style={{display:"flex", justifyContent:"space-between", margin:10}}>
+                <div style={{textAlign:"center", margin:10, marginBottom:30}}>
                     <h2>Add Quote</h2>
-                    <button><Link to={"/"} style={{textDecoration:"none", color:"black", paddingLeft:10, paddingRight:10}}>Home</Link></button>
                 </div>
                 <form onSubmit={createQuote}>
                     <div>
-                        Author Name: <input onChange={(e) =>setAuthor(e.target.value)} value={author} /> <br />
-                    </div>
-                    <div style={{marginTop:10, marginBottom:10}}>
-                        Topic: <input onChange={(e) =>setTopic(e.target.value)} value={topic} /> <br />
+                        <div className="d-flex justify-content-between">
+                            <label for="inputAuthorName">Author Name:</label> 
+                            <input type="text" onChange={(e) =>setAuthor(e.target.value)} value={author} /> <br />
+                        </div>
+                        <div className="d-flex justify-content-between mt-2 mb-2">
+                            <label for="inputTopic">Topic:</label>  
+                            <input type="text" onChange={(e) =>setTopic(e.target.value)} value={topic} /> <br />
+                        </div>
+                        <div className="d-flex justify-content-between">
+                            <label for="inputQuote">Quote:</label>  
+                            <input type="text" onChange={(e) =>setQuote(e.target.value)} value={quote} /><br />
+                        </div>
                     </div>
                     <div>
-                        Quote: <input onChange={(e) =>setQuote(e.target.value)} value={quote} /><br />
-                    </div>
-                    <div>
-                        <div style={{marginTop:10}}>
+                        <div className="mt-2">
                             <input onClick={handleCheckBox1} onChange={(e) => setIsFavorite(e.target.value)} value={isFavorite} checked={isFavorite ? 'checked' : ''} type="checkbox" /> Favorite
                         </div>
                         {errors.map((err, index) => <p key={index} style={{color:"red"}}>{err}</p>)}
                         <div style={{display:"flex", justifyContent:"center"}}>
-                            <button style={{margin:10}}>Add Quote</button> 
+                            <button className="btn btn-secondary mt-4 mb-3">Add Quote</button> 
                         </div>
                     </div>
                 </form>
