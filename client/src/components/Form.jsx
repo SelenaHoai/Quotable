@@ -68,30 +68,30 @@ const Form = (props) => {
         <div className="add-quote">
             <div className="add-form">
                 <div style={{textAlign:"center", margin:10, marginBottom:30}}>
-                    <h2>Add Quote</h2>
+                    <h2>New Quote</h2>
                 </div>
                 <form onSubmit={createQuote}>
                     <div>
                         <div className="d-flex justify-content-between">
-                            <label for="inputAuthorName">Author Name:</label> 
-                            <input type="text" onChange={(e) =>setAuthor(e.target.value)} value={author} /> <br />
+                            <label for="inputAuthorName" style={{fontSize:18}}>Author Name:</label> 
+                            <input type="text" onChange={(e) =>setAuthor(e.target.value)} value={author} />
                         </div>
-                        <div className="d-flex justify-content-between mt-2 mb-2">
-                            <label for="inputTopic">Topic:</label>  
-                            <input type="text" onChange={(e) =>setTopic(e.target.value)} value={topic} /> <br />
+                        <div className="d-flex justify-content-between mt-3 mb-3">
+                            <label for="inputTopic" style={{fontSize:18}}>Topic:</label>  
+                            <input type="text" onChange={(e) =>setTopic(e.target.value)} value={topic} />
                         </div>
                         <div className="d-flex justify-content-between">
-                            <label for="inputQuote">Quote:</label>  
-                            <input type="text" onChange={(e) =>setQuote(e.target.value)} value={quote} /><br />
+                            <label for="inputQuote" style={{fontSize:18}}>Quote:</label>  
+                            <input type="text" onChange={(e) =>setQuote(e.target.value)} value={quote} />
                         </div>
                     </div>
                     <div>
-                        <div className="mt-2">
+                        <div className="mt-3" style={{fontSize:18}}>
                             <input onClick={handleCheckBox1} onChange={(e) => setIsFavorite(e.target.value)} value={isFavorite} checked={isFavorite ? 'checked' : ''} type="checkbox" /> Favorite
                         </div>
                         {errors.map((err, index) => <p key={index} style={{color:"red"}}>{err}</p>)}
                         <div style={{display:"flex", justifyContent:"center"}}>
-                            <button className="btn btn-secondary mt-4 mb-3">Add Quote</button> 
+                            <button className="btn btn-secondary mt-4 mb-3" style={{fontSize:18}}>Add Quote</button> 
                         </div>
                     </div>
                 </form>
