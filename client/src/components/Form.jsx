@@ -180,9 +180,12 @@ const Form = (props) => {
 //                     <div style={{marginTop:10, marginBottom:10}}>
 //                         <label>Topic: </label>
 //                         <select onChange={(e) =>setTopic(e.target.value)} value={topic}>
-//                             <option value="motivation">Motivation</option>
-//                             <option value="travel">Travel</option>
-//                             <option value="love">Love</option>
+//                             <option value="Motivational">Motivational</option>
+//                             <option value="Travel">Travel</option>
+//                             <option value="Love">Love</option>
+//                             <option value="Reminder">Reminder</option>
+//                             <option value="Inspiring">Inspiring</option>
+//                             <option value="Family">Family</option>
 //                         </select>
 //                     </div>
 //                     <div>
