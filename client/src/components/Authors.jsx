@@ -1,15 +1,13 @@
 import React, { useEffect, useState } from 'react'
 import axios from 'axios';
 import { useParams } from "react-router-dom";
-// import {Link, useNavigate} from 'react-router-dom'
 
-    
+
 const Authors = (props) => {
-    // const [topic, setTopic] = useState({})
     const [quotes, setQuotes] = useState([])
     const { removeFromDom } = props;
     const { author } = useParams();
-    // const navigate = useNavigate();
+
     
     useEffect(() => {
         axios.get(`http://localhost:8000/api/quotes/authors/${author}`)
@@ -36,7 +34,7 @@ const Authors = (props) => {
                 return (
                     <div key={quotesShow._id} className="quote-box">
                         <p>"{quotesShow.quote}"</p>
-                        <p style={{textAlign:"end"}}>{quotesShow.author}</p>
+                        <p style={{textAlign:"end", fontStyle: "italic"}}>{quotesShow.author}</p>
                     </div>
                     )
                 })}

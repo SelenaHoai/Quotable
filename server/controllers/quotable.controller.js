@@ -39,12 +39,10 @@ module.exports = {
         .catch(err => res.status(400).json({ message: 'Error finding a quote', error: err }));
     },
 
-    // READ AUTHOR hardcode
+    // READ AUTHOR 
     findAllByAuthor: (req, res) => {
         Quotable.find({})
-        
         .then(allQuotes => { 
-            // console.log(req.params.author)
             res.json({author: allQuotes.filter(quote => quote.author === req.params.author)})
         })
         .catch(err => res.status(400).json({ message: 'Error finding a quote', error: err }));
