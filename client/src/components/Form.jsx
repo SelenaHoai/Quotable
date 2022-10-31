@@ -73,15 +73,27 @@ const Form = (props) => {
                 <form onSubmit={createQuote}>
                     <div>
                         <div className="d-flex justify-content-between">
-                            <label for="inputAuthorName" style={{fontSize:18}}>Author Name:</label> 
+                            <label htmlFor="inputAuthorName" style={{fontSize:18}}>Author Name:</label> 
                             <input type="text" onChange={(e) =>setAuthor(e.target.value)} value={author} />
                         </div>
-                        <div className="d-flex justify-content-between mt-3 mb-3">
-                            <label for="inputTopic" style={{fontSize:18}}>Topic:</label>  
+                        {/* <div className="d-flex justify-content-between mt-3 mb-3">
+                            <label htmlFor="inputTopic" style={{fontSize:18}}>Topic:</label>  
                             <input type="text" onChange={(e) =>setTopic(e.target.value)} value={topic} />
+                        </div> */}
+                        <div className="d-flex justify-content-between mt-3 mb-3">
+                            <label htmlFor="inputTopic" style={{fontSize:18}}>Topic: </label>
+                            <select onChange={(e) =>setTopic(e.target.value)} value={topic}>
+                                <option value="- Select -">- Select Topic -</option>
+                                <option value="Motivational">Motivational</option>
+                                <option value="Travel">Travel</option>
+                                <option value="Love">Love</option>
+                                <option value="Reminder">Reminder</option>
+                                <option value="Inspiring">Inspiring</option>
+                                <option value="Funny">Funny</option>
+                            </select>
                         </div>
                         <div className="d-flex justify-content-between">
-                            <label for="inputQuote" style={{fontSize:18}}>Quote:</label>  
+                            <label htmlFor="inputQuote" style={{fontSize:18}}>Quote:</label>  
                             <input type="text" onChange={(e) =>setQuote(e.target.value)} value={quote} />
                         </div>
                     </div>
@@ -185,7 +197,7 @@ const Form = (props) => {
 //                             <option value="Love">Love</option>
 //                             <option value="Reminder">Reminder</option>
 //                             <option value="Inspiring">Inspiring</option>
-//                             <option value="Family">Family</option>
+//                             <option value="Funny">Family</option>
 //                         </select>
 //                     </div>
 //                     <div>
