@@ -1,16 +1,15 @@
 import React, { useEffect, useState } from 'react'
 import axios from 'axios';
 import { useParams } from "react-router-dom";
-// import {Link, useNavigate} from 'react-router-dom'
+
 
     
 const Topics = (props) => {
-    // const [topic, setTopic] = useState({})
-    const [quotes, setQuotes] = useState([])
+    const [quotes, setQuotes] = useState([])    
     const { removeFromDom } = props;
     const { topic } = useParams();
-    // const navigate = useNavigate();
     
+
     useEffect(() => {
         axios.get(`http://localhost:8000/api/quotes/topics/${topic}`)
             .then(res => {setQuotes(res.data.topic)
