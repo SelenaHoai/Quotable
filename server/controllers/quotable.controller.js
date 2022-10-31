@@ -5,7 +5,6 @@ const Quotable = require("../models/quotable.model");
 
 module.exports = {
 
-
     // CREATE
     create: (req, res) => {
         Quotable.create(req.body)
